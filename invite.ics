@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VTIMEZONE
+TZID:Africa/Nairobi
+X-LIC-LOCATION:Africa/Nairobi
+BEGIN:STANDARD
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:EAT
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=Africa/Nairobi:20240210T150000
+DTEND;TZID=Africa/Nairobi:20240210T153000
+DTSTAMP:20240210T072649Z
+ORGANIZER;CN=Maryann Gathanga:mailto:maryanngathanga@gmail.com
+UID:6gp30e33c8p32b9p70q38b9k6ssjebb268p3gb9m75h66oj36kojgd1hck@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=Maryann Gathanga;X-NUM-GUESTS=0:mailto:maryanngathanga@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=faithndanumunyao@gmail.com;X-NUM-GUESTS=0:mailto:faithndanumunyao@g
+ mail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/opv-xjgq-qzj
+X-MICROSOFT-CDO-OWNERAPPTID:1890291119
+CREATED:20240210T072647Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/op
+ v-xjgq-qzj\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20240210T072647Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Maryann/Faith mentorship session
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
