@@ -1,39 +1,70 @@
-const todo_input_field = document.getElementById("todo_input_field");
-const task_container = document.getElementById("task_container");
-function addTask(){
-    if(todo_input_field.value === ''){
-        alert("You must write something!")
-    }
-    else{
-        let li = document.createElement("li");
-        li.innerHTML = todo_input_field.value;
-        task_container.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
-    }
-    todo_input_field.value = '';
-    saveTasks();
+  
+const accesskey = "2WsnWJ3N2LsIghI3RfoJG1_1-8I5KZyl9KbD-Tj4etg"     
+     
+const formEl = document.getElementById("search-form");
+const searchBox = document.getElementById("search-box");
+const searchResult = document.getElementById("search-result");
+const showMore = document.getElementById("show-more-btn");
+ 
+
+
+let inputData = "";
+let page = 1;
+
+
+async function searchImages(){
+inputData = inputEl.value;
+const url = `<https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accesskey}&per _page=12`;
+
+const response = await fetch(url);
+const data = await response.json();
+
+
+console.log(data);
+const results = data.results;
+
+if(page === 1){
+     searchResult.innerHTML = "";
+
 }
-task_container.addEventListener("click", function(e){
-    if(e.target.tagName === "LI"){
-        e.target.classList.toggle("checked");
-        saveTasks();
-    }
-    else if (e.target.tagName ==="SPAN"){
-        e.target.parentElement.remove();
-    }
-}, false);
-function saveTasks(){
-    localStorage.setItem("data",task_container.innerHTML);
+
+
+results.map((result) =>{
+     const imageWrapper =  document.createElement("div");
+     imageWrapper.classList.add("search-result");
+     const image = document.createElement("img");
+     image.src = result.urls.small;
+     image.alt = result.alt_description;
+     const imageLink = document.createElement('a');
+     imageLink.href = result.links.html;
+     imageLink.target = "_blank";
+     imageLink.textContent =result.alt_description;
+
+
+     imageWrapper.appendChild(image);
+     imageWrapper.appendChild(imageLink);
+     imageWrapper.appendChild(imageContainer);
+});
+     page++;
+     if(page >1){
+          showMore.style.display = "block"
+     }
 }
-function showTasks(){
-    task_container.innerHTML = localStorage.getItem("data");
+
+
+formEl.addEventListener("submit",(event) =>{
+     event.preventDefault();
+     page = 1;
+     searchImages();
 }
-showTasks();
-function toggleMenu(){
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-}
+ )
+
+ showMore.addEventListener("click",()=>{
+      // page++;
+       searchImages();
+ })
+ 
+
+
+
+
